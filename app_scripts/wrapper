@@ -1,0 +1,50 @@
+#!/bin/bash
+
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+HEIGHT=16
+WIDTH=48
+CHOICE_HEIGHT=6
+BACKTITLE="RedditBox.us"
+TITLE="Reddit CLI"
+MENU="Choose one of the following options:"
+
+OPTIONS=(1 "Reddit"
+         2 "Reddit Monochrome"
+         3 "Reddit Monokai"
+         4 "Reddit Papercolor"
+         5 "Reddit Solarized (Dark)"
+         6 "Reddit Solarized (Light)"
+)
+
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+        1)
+            /usr/bin/rtv
+            ;;
+        2)
+            /usr/bin/rtv --monochrome
+            ;;
+        3)
+            /usr/bin/rtv --theme molokai
+            ;;
+        4)
+            /usr/bin/rtv --theme papercolor
+            ;;
+        5)
+            /usr/bin/rtv --theme solarized-dark
+            ;;
+        6)
+            /usr/bin/rtv --theme solarized-light
+            ;;
+esac

@@ -1,0 +1,6 @@
+#!/bin/bash
+cd /app/
+
+service xinetd start
+screen -d -m /app/server
+caddy -agree

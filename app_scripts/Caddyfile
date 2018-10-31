@@ -1,0 +1,4 @@
+redditbox.us {
+	root /app/web/
+	tls alex@delta360.net
+}

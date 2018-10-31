@@ -1,0 +1,41 @@
+@import url('termynal.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css');
+@import url('https://fonts.googleapis.com/css?family=Oxygen+Mono');
+
+.rainbow {
+  -webkit-animation: rainbow 120s infinite; 
+  -ms-animation: rainbow 120s infinite;
+  animation: rainbow 120s infinite; 
+}
+
+@-webkit-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
+@-ms-keyframes rainbow{
+	20%{color: red;}
+	40%{color: yellow;}
+	60%{color: green;}
+	80%{color: blue;}
+	100%{color: orange;}	
+}
+
+@keyframes rainbow{
+	5%{color: red;}
+	35%{color: yellow;}
+	65%{color: green;}
+	85%{color: blue;}
+	0%{color: orange;}	
+}
+
+.title {
+	font-size: 26px !important;
+}
+
+body {
+    overflow:hidden;
+}
