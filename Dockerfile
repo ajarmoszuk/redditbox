@@ -14,7 +14,7 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
 
-RUN apt update -y -qq && apt install xinetd telnetd dialog rtv musl screen ca-certificates wget language-pack-en -y -qq
+RUN apt update -y -qq && apt install xinetd telnetd dialog rtv musl screen ca-certificates wget language-pack-en less -y -qq
 RUN locale-gen en_US
 RUN locale-gen en_US.UTF-8
 RUN update-locale
