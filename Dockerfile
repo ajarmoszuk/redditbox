@@ -24,7 +24,6 @@ RUN echo "" > /etc/issue
 
 COPY app_scripts/motd /app/motd
 COPY --from=builder_ssh /go/bin/server /app/server
-COPY id_rsa /app/id_rsa
 
 RUN wget https://github.com/mholt/caddy/releases/download/v0.11.0/caddy_v0.11.0_linux_amd64.tar.gz
 RUN tar --extract --file=caddy_v0.11.0_linux_amd64.tar.gz caddy
