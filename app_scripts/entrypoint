@@ -1,6 +1,10 @@
 #!/bin/bash
 cd /app/
 
+if [ ! -f /app/id_rsa ]; then
+    ssh-keygen -f /app/id_rsa -t rsa -N ''
+fi
+
 service xinetd start
 screen -d -m /app/server
 caddy -agree
