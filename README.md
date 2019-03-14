@@ -1,4 +1,5 @@
-# redditbox.us
+# RedditBox
+# ![Logo](https://ss.delta360.net/ss_66781e5148d56890563bed909125686e.png "Logo")
 View Reddit on SSH or Telnet.
 
 This project will allow you to view Reddit in the CLI via an application called [RTV](https://github.com/michael-lazar/rtv).
