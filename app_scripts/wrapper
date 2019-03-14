@@ -3,7 +3,6 @@
 export LANGUAGE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-SHELL=/app/fakeshell
 HEIGHT=16
 WIDTH=48
 CHOICE_HEIGHT=6

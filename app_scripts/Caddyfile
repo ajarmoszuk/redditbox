@@ -1,4 +1,4 @@
 redditbox.us {
 	root /app/web/
-	tls alex@delta360.net
+	tls notify@delta360.net
 }

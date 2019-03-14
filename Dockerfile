@@ -8,7 +8,17 @@ RUN apk add git \
     && go get -d -v \
     && go build -o /go/bin/server
 
-#Build server
+#Build less reader
+FROM gcc:5.5 as builder_less
+
+WORKDIR /src/
+
+RUN git clone https://github.com/vbwagner/less.git \
+    && cd less \
+    && sh configure --with-secure \
+    && make
+
+#Build redditbox server
 FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -37,7 +47,12 @@ COPY app_scripts/wrapper /app/wrapper
 COPY app_scripts/login /app/login
 COPY app_scripts/entrypoint /app/entrypoint
 
-RUN chmod -R +x /app
+COPY --from=builder_less /src/less/less /bin/less
+COPY --from=builder_less /src/less/lessecho /bin/lessecho
+COPY --from=builder_less /src/less/lesskey /bin/lesskey
+
+RUN chmod -R +x /bin/les* \
+    && chmod -R +x /app
 
 EXPOSE 22 23 80 443
 CMD /app/entrypoint
