@@ -1,6 +1,4 @@
 #!/bin/bash
-SHELL=/app/fakeshell
-
 cd /app/
 
 if [ ! -f /app/id_rsa ]; then
