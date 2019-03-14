@@ -6,7 +6,7 @@ This project will allow you to view Reddit in the CLI via an application called 
 
 To run this container, use the following (make sure you generate a RSA private key beforehand):
 ```bash
-docker run -it -d --name redditbox -p 80:80 -p 22:22 -p 23:23 -p 443:443 -v <rsa_key_location>/id_rsa:/app/id_rsa:ro falkenssmaze/redditbox
+docker run -it -d --name redditbox -p 80:80 -p 22:22 -p 23:23 -p 443:443 -v <rsa_key_location>/id_rsa:/app/id_rsa:ro -v <ssl_location>:/root/.caddy falkenssmaze/redditbox
 ```
 
 
